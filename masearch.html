@@ -150,9 +150,8 @@
               <p>In my project proposal, I had proposed a system that would relay the location of a target to the nearby agents in case where the agent that first encountered the target was not able to completely exhaust the target (can be due to fuel or storage related constraints). These messages can be used in the decision making process of each agent. I relize that this can be incorporated in such a way that if an agent recieves such a message, instead of the random exploration it will choose to move along this direction with proability that is proportional to the distance to the target (since if it recieves a message that the target is very close, there should be a higher probability that it chooses to move towards it). I guess I will need two cases where an agent with no message will utilise the e-greedy approach and the one with the message will choose between the direction from the neural network vs the direction suggested by the neural network. However, I feel like the message should also be an input of the neural network. The proposed structure of my network is as given below.</p>
             
               <p><iframe width="100%" height="500px" src="https://miro.com/app/live-embed/o9J_lBHxAmI=/?moveToViewport=-1996,-654,6656,3015" frameBorder="0" scrolling="no" allowFullScreen></iframe></p>
-
-              <br>
               <a href="https://miro.com/app/board/o9J_lBHxAmI=/">Click to view my mind map and progress</a>
+              <br>
               <br>
               <p>For learning phase of the agent, the following strategy is suggested. This is based on the general understanding that an agent which dooes not have a target in its field of view will choose to move towards a potential target location that is provided by the message, rather than choosing to move randomly.</p>
               
@@ -160,6 +159,9 @@
               <br>
               <h3>Possible Decentralization?</h3>
               <p>While in the meeting, I was struck with the idea that instead of a command centre, what if the agents themselves broadcasted the messages. This was inspired by the copying of maps in agents for the masearch implementation. This could possibly decentralize the whole process and also it also incorporates a range for the message which will prevent the message being recieved by agents which are very far away. The whole thing looks complicated in execution but will make the whole simulation more effective and lifelike. Such an implementation, I believe, will require a message stack also with the agent recieving multiple messages at a time instant. This is not required in a command center model as the tower will transmit only one message at a time.</p>
+              <br>
+              <h3>Threading for parallel computing</h3>
+              <p>Since A3C requires multiple agents to work simultaneously but seperately, I was confused about such a process could be implemented since from the basic classes in computer science, my teachers have taught me one golden rule that "one statement is executed at a time". The closest I could think for implementing the required process was a loop in which agentes would be updated seperately in a manner but this to seemed very hectic and cumbersome. Well python seems to have thought of such a problem before hand and introduced threading. I was great to know about the existance of such a solution. I would strongly recommend goin through this blog (<a href="https://realpython.com/intro-to-python-threading/#what-is-a-thread">link</a>). Thread locking was also a tool that I had difficulty in figuring out since for some reason, I was stuck with the idea that it was something that was created by the authors since my initial web search didn't yield good results. However, now I completely understand the beauty of the concept and its need. This blog was helpful for it (<a href="https://www.educative.io/edpresso/what-are-locks-in-python">link</a>).</p>
               <div class="post-single-navigation d-flex align-items-stretch">
                 
                 <a href="dsl810.html" class="ml-auto w-50 text-right pl-4">
